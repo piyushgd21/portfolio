@@ -11,19 +11,36 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
-header nav ul {
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-header nav ul li {
-    display: inline;
+.nav-links li {
     margin: 0 15px;
 }
 
-header nav ul li a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
 }
@@ -55,4 +72,23 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links-visible {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
 }
